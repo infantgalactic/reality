@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reality Architecture // Control Matrix</title>
+    
+    <!-- Premium Geometric & Monospace Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Solid Dark Theme Parameters */
+            --bg: #000000;
+            --surface: #0a0a0c;
+            --surface-card: #111114;
+            --surface-sub: #16161a;
+            --border: #222226;
+            --text: #ffffff;
+            --text-muted: #94a3b8;
+            --hyperlink: #2997ff;
+            --lang-theme: #d97706; 
+        }
+
+        [data-theme="light"] {
+            /* Solid Light Theme Palette */
+            --bg: #ffffff;
+            --surface: #f4f4f7;
+            --surface-card: #ffffff;
+            --surface-sub: #f8fafc;
+            --border: #e2e8f0;
+            --text: #0f172a;
+            --text-muted: #64748b;
+            --hyperlink: #0066cc;
+            --lang-theme: #d97706;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            letter-spacing: -0.01em;
+        }
+
+        h1, .display-title, .phase-heading-text, .language-heading-plate {
+            font-family: 'Outfit', sans-serif !important;
+            letter-spacing: -0.04em !important;
+        }
+
+        .mono, .time-pill, .price-tag-node, .formula-text {
+            font-family: 'JetBrains Mono', monospace !important;
+            font-size: 13px;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            padding: 40px 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .viewport-container {
+            width: 100%;
+            max-width: 900px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        /* Top Bar Interface Menu */
+        header {
+            background: var(--surface);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 14px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .logo-mark {
+            font-family: 'Outfit', sans-serif;
+            font-size: 42px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -0.03em;
+            color: var(--text);
+            display: flex;
+            align-items: baseline;
+            gap: 6px;
+        }
+
+        .controls {
+            display: flex;
+            align-items: center;
+        }
+
+        .tabs-wrapper {
+            display: flex;
+            gap: 6px;
+            background: var(--bg);
+            padding: 6px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+        }
+
+        .tab-trigger {
+            background: transparent;
+            border: 1px solid transparent;
+            color: var(--text-muted);
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: 700;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-transform: uppercase;
+        }
+
+        /* Dark Mode Toggle */
+        .repositioned-toggle-box {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 4px 8px;
+            gap: 12px;
+            width: 100%;
+        }
+
+        .toggle-txt {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            letter-spacing: 0.05em;
+        }
+
+        .switch-input-housing {
+            position: relative;
+            display: inline-block;
+            width: 42px;
+            height: 24px;
+        }
+
+        .switch-input-housing input { opacity: 0; width: 0; height: 0; }
+
+        .switch-slider-element {
+            position: absolute;
+            cursor: pointer;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: var(--border);
+            border-radius: 34px;
+            transition: 0.2s ease;
+        }
+
+        .switch-slider-element::before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            transition: 0.2s ease;
+        }
+
+        input:checked + .switch-slider-element { background-color: #34c759; }
+        input:checked + .switch-slider-element::before { transform: translateX(18px); }
+
+        .hamburger {
+            display: none;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background: var(--text);
+            margin: 4px 0;
+        }
+
+        /* Dynamic Headline Box Component */
+        .language-heading-plate {
+            background-color: transparent;
+            color: var(--lang-theme);
+            border: 2px solid var(--border);
+            border-radius: 14px;
+            padding: 24px;
+            font-size: 32px;
+            font-weight: 900;
+            text-transform: uppercase;
+            transition: color 0.4s ease, border-color 0.4s ease;
+            text-align: center;
+        }
+
+        /* Overview Summary Component */
+        .super-truth-panel {
+            background: var(--surface-card);
+            border: 2px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .super-truth-title {
+            font-size: 14px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+        }
+
+        /* Content Panel Layout views */
+        .view-canvas {
+            display: none;
+            flex-direction: column;
+            gap: 32px;
+            width: 100%;
+            animation: fadeIn 0.4s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .view-canvas.active-view { display: flex; }
+
+        .phase-container-block {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .phase-headline-separator {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 14px;
+            gap: 4px;
+        }
+
+        .phase-heading-text {
+            font-size: 22px;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .phase-time-marker {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-muted);
+        }
+
+        .milestone-badge-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding-bottom: 16px;
+            border-bottom: 1px dashed var(--border);
+            margin-bottom: 8px;
+        }
+
+        .milestone-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--text-muted);
+            letter-spacing: 0.06em;
+        }
+
+        .milestone-target {
+            font-size: 12px;
+            font-weight: 700;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--lang-theme);
+            padding: 4px 12px;
+            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            border: 1px solid var(--border);
+        }
+
+        /* Single Column Action Content Cards */
+        .resource-execution-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .resource-core-card {
+            background: var(--surface-card);
+            border: 2px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .card-meta-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 16px;
+        }
+
+        .meta-left-group {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .time-pill {
+            background: var(--text);
+            color: var(--bg);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 4px;
+        }
+
+        .resource-class-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            background: var(--surface);
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+        }
+
+        .resource-title-link {
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        .resource-title-link a {
+            color: var(--hyperlink) !important;
+            text-decoration: underline !important;
+            text-underline-offset: 4px;
+        }
+
+        .resource-title-link a:hover {
+            opacity: 0.8;
+        }
+
+        /* Functional Concerns Separation Dividers */
+        .sub-functional-block {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            background: var(--surface);
+            padding: 24px;
+            border-radius: 12px;
+            border-left: 4px solid var(--border);
+        }
+
+        .sub-functional-block.learning-pane {
+            border-left-color: var(--lang-theme);
+        }
+
+        .sub-functional-block.logistics-pane {
+            background-color: var(--surface-sub);
+        }
+
+        .block-intent-header {
+            font-size: 11px;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            margin-bottom: 4px;
+        }
+        .learning-pane .block-intent-header { color: var(--lang-theme); }
+        .logistics-pane .block-intent-header { color: var(--text-muted); }
+
+        /* Strict Bullet Lists */
+        .bullet-nodes {
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .bullet-nodes li {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .bullet-nodes li::before {
+            content: "▪";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 12px;
+        }
+        .learning-pane .bullet-nodes li::before { color: var(--lang-theme); }
+        .logistics-pane .bullet-nodes li::before { color: var(--text-muted); }
+
+        .bullet-nodes li strong {
+            color: var(--text);
+            font-weight: 700;
+        }
+
+        /* Sleek Split Ledger System */
+        .ledger-row-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 12px;
+        }
+
+        .ledger-breakdown-panel {
+            background: var(--surface);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .ledger-tags-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .price-tag-node {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            padding: 6px 10px;
+            border-radius: 6px;
+            font-weight: 700;
+        }
+
+        .price-tag-node span { color: var(--text-muted); font-weight: 500; }
+
+        .total-summary-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 2px solid var(--border);
+            padding-top: 12px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        /* Consolidated Project Ledger Footer */
+        .consolidated-project-footer {
+            background: var(--surface-card);
+            border: 2px solid var(--border);
+            border-radius: 16px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            border-left: 4px solid var(--lang-theme);
+            margin-top: 24px;
+            transition: border-left-color 0.4s ease;
+        }
+
+        .formula-line-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 10px;
+        }
+
+        .grand-final-line-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            font-size: 18px;
+            font-weight: 800;
+        }
+
+        @media (max-width: 960px) {
+            body { padding: 20px 12px; }
+            .viewport-container { gap: 16px; }
+            .view-canvas { gap: 24px; }
+            .resource-core-card { padding: 24px; gap: 16px; }
+            .sub-functional-block { padding: 16px; }
+            .card-meta-row { flex-direction: column; align-items: flex-start; gap: 8px; }
+            .language-heading-plate { font-size: 24px; padding: 16px; }
+            .ledger-row-wrapper { grid-template-columns: 1fr; gap: 12px; }
+            
+            .hamburger { display: block; }
+            .controls {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 72px; left: 16px; right: 16px;
+                background: var(--surface);
+                border: 2px solid var(--border);
+                border-radius: 14px;
+                padding: 24px;
+                gap: 20px;
+                z-index: 100;
+                box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+            }
+            .controls.open { display: flex; }
+            .tabs-wrapper { flex-direction: column; width: 100%; }
+            .tab-trigger { width: 100%; text-align: center; padding: 12px; }
+            .repositioned-toggle-box { justify-content: space-between; border-top: 1px solid var(--border); padding-top: 16px; margin-top: 8px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="viewport-container">
+        
+        <!-- Navigation Menu -->
+        <header>
+            <div class="logo-mark">REALITY</div>
+            
+            <button class="hamburger" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </button>
+
+            <!-- Move toggle here for better alignment -->
+            <div class="repositioned-toggle-box" style="width: auto;">
+                <span class="toggle-txt">Dark Mode</span>
+                <label class="switch-input-housing">
+                    <input type="checkbox" id="theme-toggle" checked onclick="toggleTheme()">
+                    <span class="switch-slider-element"></span>
+                </label>
+            </div>
+        </header>
+
+        <!-- Category Tabs -->
+        <div class="controls" id="menu-dock" style="width: 100%; justify-content: center;">
+            <div class="tabs-wrapper" style="width: 100%; justify-content: space-between;">
+                <button class="tab-trigger" id="default-tab" onclick="switchCanvasView('finance-pane', 'MONEY & FINANCE', '#d97706', this)">FINANCE</button>
+                <button class="tab-trigger" onclick="switchCanvasView('perception-pane', 'INFORMATION & MEDIA', '#2997ff', this)">PERCEPTION</button>
+                <button class="tab-trigger" onclick="switchCanvasView('automation-pane', 'SYSTEMS & AI', '#a855f7', this)">SYSTEMS</button>
+                <button class="tab-trigger" onclick="switchCanvasView('biology-pane', 'BIOLOGY & HEALTH', '#059669', this)">BIOLOGY</button>
+                <button class="tab-trigger" onclick="switchCanvasView('power-pane', 'POWER & SHADOW OPS', '#e63946', this)">POWER</button>
+            </div>
+        </div>
+
+        <!-- Combined Super Truth Panel -->
+        <div class="super-truth-panel">
+            <div class="super-truth-title">Core Truths of Reality</div>
+            <ul class="bullet-nodes">
+                <li><strong>The Trap:</strong> The currency is rigged to melt, the news is a distraction, your biology is poisoned for profit, and the people you vote for don't actually run the country.</li>
+                <li><strong>The Positive Advantage:</strong> The system is entirely mechanical. It feeds exclusively on the blind compliance of the masses. Because it operates on fixed rules and data structures, anyone who learns to read the data can build untouchable physical and financial fortresses. You are only a pawn if you stay on the board.</li>
+            </ul>
+        </div>
+
+        <!-- Symmetrical Heading Box Component -->
+        <div class="language-heading-plate" id="header-display-box">MONEY & FINANCE</div>
+
+        <!-- FINANCE CANVAS -->
+        <div id="finance-pane" class="view-canvas">
+            <div class="phase-container-block">
+                <div class="phase-headline-separator">
+                    <span class="phase-heading-text">The Global Financial Engine & Capital Matrix</span>
+                    <span class="phase-time-marker">Rank 1 // Descending Order of Importance</span>
+                </div>
+                
+                <div class="resource-execution-stack">
+                    <div class="resource-core-card">
+                        <div class="card-meta-row">
+                            <div class="meta-left-group">
+                                <div class="time-pill">0.5 H</div>
+                                <span class="resource-class-label">Systems Logic</span>
+                            </div>
+                            <h3 class="resource-title-link"><a href="https://www.youtube.com/watch?v=npoNbXXS4oQ" target="_blank">How The Economic Machine Works (Ray Dalio)</a></h3>
+                        </div>
+                        <div class="sub-functional-block learning-pane">
+                            <div class="block-intent-header">Big Bro Advice & Reality</div>
+                            <ul class="bullet-nodes">
+                                <li><strong>The Brutal Example:</strong> Look at the 2008 financial crash. Wall Street banks mathematically destroyed the global housing market through synthetic derivatives. What happened? They didn't go to jail. They took $700 billion in taxpayer bailouts, fired the lowest-level workers, and paid their executives record-breaking bonuses the very next year. The system privatizes gains and socializes losses.</li>
+                                <li><strong>The Escape:</strong> Stop trading hours for a dying currency. Central banks print money out of thin air to cover state debt, silently stealing your savings through inflation. Pivot to running zero-inventory international trade arbitrage across global corridors, or hold scarce, hard commodities. Be the tollbooth, not the traffic.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="resource-core-card">
+                        <div class="card-meta-row">
+                            <div class="meta-left-group">
+                                <div class="time-pill">2.5 H</div>
+                                <span class="resource-class-label">Monetary History</span>
+                            </div>
+                            <h3 class="resource-title-link"><a href="https://www.youtube.com/playlist?list=PLE88E9ICdipidHkTehs1VbFzgwrq1jkUJ" target="_blank">Hidden Secrets of Money (Ep. 1-4)</a></h3>
+                        </div>
+                        <div class="sub-functional-block learning-pane">
+                            <div class="block-intent-header">Operational Proof</div>
+                            <ul class="bullet-nodes">
+                                <li><strong>The Proof:</strong> Documents the exact historical difference between real money (hard assets/gold) and fake currency (fiat/paper). Every single fiat currency in human history has eventually collapsed to zero.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="resource-core-card">
+                        <div class="card-meta-row">
+                            <div class="meta-left-group">
+                                <div class="time-pill">2.0 H</div>
+                                <span class="resource-class-label">Market Forensics</span>
+                            </div>
+                            <h3 class="resource-title-link"><a href="https://www.youtube.com/watch?v=T2IaJwkqgPk" target="_blank">Inside Job</a></h3>
+                        </div>
+                        <div class="sub-functional-block learning-pane">
+                            <div class="block-intent-header">Operational Proof</div>
+                            <ul class="bullet-nodes">
+                                <li><strong>The Proof:</strong> Explicitly details how academic institutions, rating agencies, and mega-banks conspired to artificially inflate credit ratings on toxic assets to steal billions from the global middle class.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="resource-core-card">
+                        <div class="card-meta-row">
+                            <div class="meta-left-group">
+                                <div class="time-pill">3.0 H</div>
+                                <span class="resource-class-label">Banking Mechanics</span>
+                            </div>
+                            <h3 class="resource-title-link"><a href="https://www.youtube.com/watch?v=jbXcKpxhXZE" target="_blank">Princes of the Yen & Spider's Web</a></h3>
+                        </div>
+                        <div class="sub-functional-block learning-pane">
+                            <div class="block-intent-header">Operational Proof</div>
+                            <ul class="bullet-nodes">
+                                <li><strong>The Proof:</strong> Central banks intentionally engineer boom-and-bust cycles to strip public resources, while the elite simultaneously hide trillions in interconnected offshore British tax havens to remain completely immune to the laws they force you to follow.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Double Sleek Ledger Panel -->
+            <div class="ledger-row-wrapper">
+                <div class="ledger-breakdown-panel">
+                    <div class="ledger-tags-flex">
+                        <div class="price-tag-node">Dalio Machine: <span>0.5 H</span></div>
+                        <div class="price-tag-node">Secrets of Money: <span>2.5 H</span></div>
+                    </div>
+                </div>
+                <div class="ledger-breakdown-panel">
+                    <div class="ledger-tags-flex">
+                        <div class="price-tag-node">Inside Job: <span>2.0 H</span></div>
+                        <div class="price-tag-node">Banking Networks: <span>3.0 H</span></div>
+                    </div>
+                    <div class="total-summary-row">
+                        <span>Track Duration Total</span>
+                        <span class="mono">8.0 H</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PERCEPTION CANVAS -->
+        <div id="perception-pane" class="view-canvas">
+            <div class="phase-container-block">
+                <div class="phase-headline-separator">
+                    <span class="phase-heading-text">Information Warfare & Perception Control</span>
+                    <span class="phase-time-marker">Rank 2 // Descending Order of Importance</span>
+                </div>
+                
+                <div class="resource-execution-stack">
+                    <div class="resource-core-card">
+                        <div class="card-meta-row">
+                            <div class="meta-left-group">
+                                <div class="time-pill">2.5 H</div>
+                                <span class="resource-class-label">Information Networks</span>
+                            </div>
+                            <h3 class="resource-title-link"><a href="https://www.youtube.com/watch?v=EuwmWnphqII" target="_blank">Manufacturing Consent (Noam Chomsky)</a></h3>
+                        </div>
+                        <div class="sub-functional-block learning-pane">
+                            <div class="block-intent-header">Big Bro Advice & Reality</div>
+                            <ul class="bullet-nodes">
+                                <li><strong>The Brutal Example:</strong> Look at the Gulf of Tonkin incident or Weapons of Mass Destruction (WMDs) in Iraq. The government completely fabricated intelligence to justify invading foreign nations, resulting in trillions of dollars for defense contractors and millions of deaths. The mass media didn't question it; they acted as the PR wing to sell the war to the public.</li>
+                                <li><strong>The Escape:</strong> Discard all corporate news feeds. They exist strictly to make you hate your neighbor over culture-war trivialities so you don't look up at the wealth extraction. Track raw OSINT (Open Source Intelligence). Learn Google Dorking, read satellite data, and track raw financial ledger movements. Truth is found in boring data, never in screaming headlines.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="resource-core-card">
+                        <div class="card-meta-row">
+                            <div class="meta-left-group">
+                                <div class="time-pill">3.0 H</div>
+                                <span class="resource-class-label">Mass Psychology</span>
+                            </div>
+                            <h3 class="resource-title-link"><a href="https://www.youtube.com/watch?v=eJ3RzGoQC4s" target="_blank">The Century of the Self (Adam Curtis)</a></h3>
+                        </div>
+                        <div class="sub-functional-block learning-pane">
+                            <div class="block-intent-header">Operational Proof</div>
+                            <ul class="bullet-nodes">
+                                <li><strong>The Proof:</strong> Documents how the corporate elite took Sigmund Freud's theories of the subconscious and weaponized them to invent "public relations." They intentionally changed the public from dangerous, active citizens into passive, predictable consumers.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="resource-core-card">
+                        <div class="card-meta-row">
+                            <div class="meta-left-group">
+                                <div class="time-pill">1.5 H</div>
+                                <span class="resource-class-label">Data Verification</span>
+                            </div>
+                            <h3 class="resource-title-link"><a href="https://www.youtube.com/watch?v=cRWJqGk40A8" target="_blank">Bellingcat: Truth in a Post-Truth World</a></h3>
+                        </div>
+                        <div class="sub-functional-block learning-pane">
+                            <div class="block-intent-header">Operational Proof</div>
+                            <ul class="bullet-nodes">
+                                <li><strong>The Proof:</strong> Shows exactly how decentralized citizen journalists bypass state media completely using raw, open-source data to geolocate secret military units and expose state-sponsored assassination squads.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ledger-row-wrapper">
+                <div class="ledger-breakdown-panel">
+                    <div class="ledger-tags-flex">
+                        <div class="price-tag-node">Chomsky Core: <span>2.5 H</span></div>
+                        <div class="price-tag-node">Century of Self: <span>3.0 H</span></div>
+                    </div>
+                </div>
+                <div class="ledger-breakdown-panel">
+                    <div class="ledger-tags-flex">
+                        <div class="price-tag-node">Bellingcat OSINT: <span>1.5 H</span></div>
+                    </div>
+                    <div class="total-summary-row">
+                        <span>Track Duration Total</span>
+                        <span class="mono">7.0 H</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AUTOMATION CANVAS -->
+        <div id="automation-pane" class="view-canvas">
+            <div class="phase-container-block">
+                <div class="phase-headline-separator">
+                    <span class="phase-heading-text">Systems Thinking & Algorithmic Automation</span>
+                    <span class="phase-time-marker">Rank 3 // Descending Order of Importance</span>
+                </div>
+                
+                <div class="resource-execution-stack">
+                    <div class="resource-core-card">
+                        <div class="card-meta-row">
+                            <div class="meta-left-group">
+                                <div class="time-pill">1.5 H</div>
+                                <span class="resource-class-label">Algorithmic Filters</span>
+                            </div>
+                            <h3 class="resource-title-link"><a href="https://www.youtube.com/watch?v=fa5GzP3X2x4" target="_blank">The Creepy Line</a></h3>
+                        </div>
+                        <div class="sub-functional-block learning-pane">
+                            <div class="block-intent-header">Big Bro Advice & Reality</div>
+                            <ul class="bullet-nodes">
+                                <li><strong>The Brutal Example:</strong> Look at the Cambridge Analytica scandal. A private firm harvested the psychological data of 87 million users without their direct consent, fed it into machine-learning algorithms, and successfully swing global elections by feeding voters hyper-targeted, customized alternate realities. The screen you look at is manipulating your neurochemistry in real-time.</li>
+                                <li><strong>The Escape:</strong> If you aren't programming the machine, you are the product. You must master local Large Language Models (LLMs) and systems architecture. Offload your routine tasks to AI, but keep your data processing local and encrypted so you don't become training data for Silicon Valley.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="resource-core-card">
+                        <div class="card-meta-row">
+                            <div class="meta-left-group">
+                                <div class="time-pill">1.5 H</div>
+                                <span class="resource-class-label">Network Architecture</span>
+                            </div>
+                            <h3 class="resource-title-link"><a href="https://www.youtube.com/watch?v=uaZysBGEzQ4" target="_blank">The Social Dilemma</a></h3>
+                        </div>
+                        <div class="sub-functional-block learning-pane">
+                            <div class="block-intent-header">Operational Proof</div>
+                            <ul class="bullet-nodes">
+                                <li><strong>The Proof:</strong> The very engineers who built the infinite-scroll algorithms admit they were strictly designed to hijack human dopamine systems, utilizing slot-machine psychology to keep billions of people trapped in a state of passive consumption.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="resource-core-card">
+                        <div class="card-meta-row">
+                            <div class="meta-left-group">
+                                <div class="time-pill">1.0 H</div>
+                                <span class="resource-class-label">Systems Dynamics</span>
+                            </div>
+                            <h3 class="resource-title-link"><a href="https://www.youtube.com/watch?v=Gcg1hOxRayY" target="_blank">Thinking in Systems</a></h3>
+                        </div>
+                        <div class="sub-functional-block learning-pane">
+                            <div class="block-intent-header">Operational Proof</div>
+                            <ul class="bullet-nodes">
+                                <li><strong>The Proof:</strong> How to stop looking at isolated surface-level events and start seeing the invisible mechanical feedback loops, delays, and structural boundaries that actually run the world.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ledger-row-wrapper">
+                <div class="ledger-breakdown-panel">
+                    <div class="ledger-tags-flex">
+                        <div class="price-tag-node">Creepy Line: <span>1.5 H</span></div>
+                        <div class="price-tag-node">Social Dilemma: <span>1.5 H</span></div>
+                    </div>
+                </div>
+                <div class="ledger-breakdown-panel">
+                    <div class="ledger-tags-flex">
+                        <div class="price-tag-node">Systems Loops: <span>1.0 H</span></div>
+                    </div>
+                    <div class="total-summary-row">
+                        <span>Track Duration Total</span>
+                        <span class="mono">4.0 H</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BIOLOGY CANVAS -->
+        <div id="biology-pane" class="view-canvas">
+            <div class="phase-container-block">
+                <div class="phase-headline-separator">
+                    <span class="phase-heading-text">Biological Infrastructure & Health Markets</span>
+                    <span class="phase-time-marker">Rank 4 // Descending Order of Importance</span>
+                </div>
+                
+                <div class="resource-execution-stack">
+                    <div class="resource-core-card">
+                        <div class="card-meta-row">
+                            <div class="meta-left-group">
+                                <div class="time-pill">4.0 H</div>
+                                <span class="resource-class-label">Pharma Operations</span>
+                            </div>
+                            <h3 class="resource-title-link"><a href="https://www.hbo.com/movies/the-crime-of-the-century" target="_blank">The Crime of the Century (Opioid Crisis)</a></h3>
+                        </div>
+                        <div class="sub-functional-block learning-pane">
+                            <div class="block-intent-header">Big Bro Advice & Reality</div>
+                            <ul class="bullet-nodes">
+                                <li><strong>The Brutal Example:</strong> Look at Purdue Pharma and the opioid crisis. Pharmaceutical executives explicitly knew OxyContin was highly addictive and deadly. They fabricated studies calling it "non-addictive," bribed doctors with kickbacks to prescribe it for minor pain, and intentionally triggered a catastrophic addiction wave that killed hundreds of thousands of people, strictly to hit quarterly profit targets.</li>
+                                <li><strong>The Escape:</strong> The medical system does not want to cure you. A cured patient is a lost customer. They want to put you on a daily chemical subscription. Opt out by fortifying your biological machine. Strip ultra-processed seed oils and hidden sugars from your diet. Build brutal physical resilience. A highly energetic host cannot be easily farmed for profit.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="resource-core-card">
+                        <div class="card-meta-row">
+                            <div class="meta-left-group">
+                                <div class="time-pill">1.5 H</div>
+                                <span class="resource-class-label">Nutritional Biochem</span>
+                            </div>
+                            <h3 class="resource-title-link"><a href="https://www.youtube.com/watch?v=dBnniua6-oM" target="_blank">Sugar: The Bitter Truth (Dr. Robert Lustig)</a></h3>
+                        </div>
+                        <div class="sub-functional-block learning-pane">
+                            <div class="block-intent-header">Operational Proof</div>
+                            <ul class="bullet-nodes">
+                                <li><strong>The Proof:</strong> A biochemical breakdown of how the food industry knowingly introduced high-fructose corn syrup to bypass the brain's satiety signals, creating systemic addiction and sparking the global metabolic disease epidemic.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="resource-core-card">
+                        <div class="card-meta-row">
+                            <div class="meta-left-group">
+                                <div class="time-pill">0.75 H</div>
+                                <span class="resource-class-label">Logistics Realities</span>
+                            </div>
+                            <h3 class="resource-title-link"><a href="https://www.youtube.com/watch?v=GkXG16e1xP0" target="_blank">The Dark Side of the Food Industry</a></h3>
+                        </div>
+                        <div class="sub-functional-block learning-pane">
+                            <div class="block-intent-header">Operational Proof</div>
+                            <ul class="bullet-nodes">
+                                <li><strong>The Proof:</strong> Shows exactly how corporate food processors optimize exclusively for supply-chain shelf life and cost reduction over human physiological safety.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ledger-row-wrapper">
+                <div class="ledger-breakdown-panel">
+                    <div class="ledger-tags-flex">
+                        <div class="price-tag-node">Pharma Systems: <span>4.0 H</span></div>
+                        <div class="price-tag-node">Lustig Biochem: <span>1.5 H</span></div>
+                    </div>
+                </div>
+                <div class="ledger-breakdown-panel">
+                    <div class="ledger-tags-flex">
+                        <div class="price-tag-node">DW Logistics: <span>0.75 H</span></div>
+                    </div>
+                    <div class="total-summary-row">
+                        <span>Track Duration Total</span>
+                        <span class="mono">6.25 H</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- POWER CANVAS (CONSPIRACY TRUTHS INCLUDED) -->
+        <div id="power-pane" class="view-canvas">
+            <div class="phase-container-block">
+                <div class="phase-headline-separator">
+                    <span class="phase-heading-text">Power, Shadow Ops & Verified Conspiracies</span>
+                    <span class="phase-time-marker">Rank 5 // Descending Order of Importance</span>
+                </div>
+                
+                <div class="resource-execution-stack">
+                    <div class="resource-core-card">
+                        <div class="card-meta-row">
+                            <div class="meta-left-group">
+                                <div class="time-pill">4.0 H</div>
+                                <span class="resource-class-label">Declassified Truths</span>
+                            </div>
+                            <h3 class="resource-title-link"><a href="https://www.netflix.com/title/80050007" target="_blank">Wormwood (CIA MKUltra)</a></h3>
+                        </div>
+                        <div class="sub-functional-block learning-pane">
+                            <div class="block-intent-header">Big Bro Advice & Reality</div>
+                            <ul class="bullet-nodes">
+                                <li><strong>The Brutal Example:</strong> For decades, the idea that the CIA was kidnapping civilians, torturing them, and pumping them full of LSD to research mind control was laughed off as a "crazy conspiracy theory." Then the documents were declassified. Operation MKUltra was 100% real. The same applies to the Epstein network—a literal honeypot operation compromising global politicians and elites that was ignored until it was impossible to hide.</li>
+                                <li><strong>The Escape:</strong> The "crazy conspiracy theory" label is frequently used as a shield by intelligence agencies to hide genuine shadow operations. Maintain zero ideological allegiance to flags or politicians. Assume governments operate strictly on leverage, blackmail, and resource extraction. Secure your privacy, encrypt your data, and rely only on hard, verifiable documents.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="resource-core-card">
+                        <div class="card-meta-row">
+                            <div class="meta-left-group">
+                                <div class="time-pill">2.5 H</div>
+                                <span class="resource-class-label">Covert Action</span>
+                            </div>
+                            <h3 class="resource-title-link"><a href="https://www.youtube.com/watch?v=GGHXjOaWTEo" target="_blank">Operation Gladio (BBC Timewatch)</a></h3>
+                        </div>
+                        <div class="sub-functional-block learning-pane">
+                            <div class="block-intent-header">Operational Proof</div>
+                            <ul class="bullet-nodes">
+                                <li><strong>The Proof:</strong> The declassified proof that NATO and Western intelligence funded false-flag terrorist bombings in Europe, killing innocent civilians, specifically to scare the public into voting for right-wing, anti-communist governments.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="resource-core-card">
+                        <div class="card-meta-row">
+                            <div class="meta-left-group">
+                                <div class="time-pill">2.0 H</div>
+                                <span class="resource-class-label">Surveillance Grid</span>
+                            </div>
+                            <h3 class="resource-title-link"><a href="https://www.youtube.com/watch?v=XiGwAIfBqJ8" target="_blank">Citizenfour (Edward Snowden)</a></h3>
+                        </div>
+                        <div class="sub-functional-block learning-pane">
+                            <div class="block-intent-header">Operational Proof</div>
+                            <ul class="bullet-nodes">
+                                <li><strong>The Proof:</strong> The real-time, undeniable hidden-camera footage of Edward Snowden exposing that the NSA intercepts and catalogues every single text message, email, and digital footprint of the global population. Another "conspiracy" proven as absolute fact.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="resource-core-card">
+                        <div class="card-meta-row">
+                            <div class="meta-left-group">
+                                <div class="time-pill">3.5 H</div>
+                                <span class="resource-class-label">Cyber & Economic War</span>
+                            </div>
+                            <h3 class="resource-title-link"><a href="https://www.youtube.com/watch?v=7uEiyhE-vLE" target="_blank">Zero Days & Economic Hit Man</a></h3>
+                        </div>
+                        <div class="sub-functional-block learning-pane">
+                            <div class="block-intent-header">Operational Proof</div>
+                            <ul class="bullet-nodes">
+                                <li><strong>The Proof:</strong> Demonstrates how governments use autonomous computer viruses (Stuxnet) to blow up physical infrastructure, and how massive unpayable debt is weaponized to legally steal natural resources from developing nations.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ledger-row-wrapper">
+                <div class="ledger-breakdown-panel">
+                    <div class="ledger-tags-flex">
+                        <div class="price-tag-node">CIA MKUltra: <span>4.0 H</span></div>
+                        <div class="price-tag-node">Gladio Ops: <span>2.5 H</span></div>
+                    </div>
+                </div>
+                <div class="ledger-breakdown-panel">
+                    <div class="ledger-tags-flex">
+                        <div class="price-tag-node">Citizenfour: <span>2.0 H</span></div>
+                        <div class="price-tag-node">Cyber/Econ Warfare: <span>3.5 H</span></div>
+                    </div>
+                    <div class="total-summary-row">
+                        <span>Track Duration Total</span>
+                        <span class="mono">12.0 H</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Consolidated Project Ledger Footer -->
+        <div class="consolidated-project-footer">
+            <div class="formula-line-wrapper">
+                <span class="toggle-txt">Total Matrix Addition</span>
+                <span class="formula-text">8.0 H + 7.0 H + 4.0 H + 6.25 H + 12.0 H</span>
+            </div>
+            <div class="grand-final-line-wrapper">
+                <div class="display-title" style="font-size: 16px;">System Ingestion Allocation</div>
+                <div style="color: var(--lang-theme);" id="master-total-display" class="mono">37.25 H</div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Initialization
+        document.addEventListener("DOMContentLoaded", () => {
+            const defaultTab = document.getElementById('default-tab');
+            if (defaultTab) {
+                switchCanvasView('finance-pane', 'MONEY & FINANCE', '#d97706', defaultTab);
+            }
+        });
+
+        function switchCanvasView(viewPaneId, mainTitle, themeHexColor, triggerBtn) {
+            // Hide all canvases
+            document.querySelectorAll('.view-canvas').forEach(view => {
+                view.classList.remove('active-view');
+            });
+            
+            // Reset all buttons
+            document.querySelectorAll('.tab-trigger').forEach(btn => {
+                btn.classList.remove('active');
+                btn.style.color = 'var(--text-muted)';
+                btn.style.borderColor = 'transparent';
+                btn.style.backgroundColor = 'transparent';
+                btn.style.boxShadow = 'none';
+            });
+            
+            // Show targeted canvas
+            document.getElementById(viewPaneId).classList.add('active-view');
+            
+            // Apply glow and color to active button with transition
+            triggerBtn.classList.add('active');
+            triggerBtn.style.color = themeHexColor;
+            triggerBtn.style.borderColor = themeHexColor;
+            
+            // Convert Hex to RGB for background transparency and shadow
+            const hexToRgb = hex => hex.replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i, (m, r, g, b) => '#' + r + r + g + g + b + b).substring(1).match(/.{2}/g).map(x => parseInt(x, 16));
+            const [r, g, b] = hexToRgb(themeHexColor);
+            triggerBtn.style.backgroundColor = `rgba(${r}, ${g}, ${b}, 0.15)`;
+            triggerBtn.style.boxShadow = `0 4px 12px rgba(${r}, ${g}, ${b}, 0.2)`;
+            
+            // Update UI Globals
+            document.documentElement.style.setProperty('--lang-theme', themeHexColor);
+            document.getElementById('header-display-box').innerText = mainTitle;
+            
+            // Update milestone target box colors & borders dynamically
+            const activePane = document.getElementById(viewPaneId);
+            const milestoneTarget = activePane.querySelector('.milestone-target');
+            if(milestoneTarget) {
+                milestoneTarget.style.color = themeHexColor;
+                milestoneTarget.style.borderColor = themeHexColor;
+                milestoneTarget.style.backgroundColor = `rgba(${r}, ${g}, ${b}, 0.1)`;
+            }
+            
+            document.getElementById('master-total-display').style.color = themeHexColor;
+            document.querySelector('.consolidated-project-footer').style.borderLeftColor = themeHexColor;
+        }
+
+        function toggleTheme() {
+            const toggleElement = document.getElementById('theme-toggle');
+            const targetModeSetting = toggleElement.checked ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', targetModeSetting);
+        }
+    </script>
+</body>
+</html>
