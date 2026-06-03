@@ -351,6 +351,7 @@
             font-size: 14px;
             color: var(--text-muted);
             margin-top: 8px;
+            line-height: 1.5;
         }
 
         .instruction-box strong {
@@ -393,9 +394,9 @@
             color: var(--lang-theme);
         }
 
-        /* Track Ledger (Isolated & Clean) */
+        /* Track Ledger */
         .track-ledger {
-            margin-top: 100px; /* Massive gap from learning content */
+            margin-top: 80px; 
             background: var(--surface-card);
             border: 1px solid var(--border);
             border-radius: 12px;
@@ -437,11 +438,11 @@
             font-size: 16px;
         }
 
-        /* Global Project Footer (Static White/Neutral) */
+        /* Global Project Footer */
         .global-footer {
             margin-top: 40px;
             background: var(--surface-card);
-            border: 2px solid #8b949e; /* Always static, neutral */
+            border: 2px solid #8b949e; 
             border-radius: 12px;
             padding: 32px 40px;
             display: flex;
@@ -478,7 +479,6 @@
 
     <div class="viewport-container">
         
-        <!-- Header & Utility -->
         <header>
             <div class="top-row">
                 <div class="logo-mark">REALITY</div>
@@ -492,34 +492,32 @@
             </div>
         </header>
 
-        <!-- The Master Truth Panel -->
         <div class="master-truth-panel">
             <div class="master-truth-header">The Core of Reality</div>
             <ul class="truth-list">
                 <li>
                     <span class="truth-number">01</span>
-                    <div><strong>Finance:</strong> The money in your bank loses value every year by design. The government prints money to pay its debts, which slowly steals your purchasing power.</div>
+                    <div><strong>Finance:</strong> The government prints money to pay its debts. This directly steals your purchasing power. Saving paper money guarantees you lose.</div>
                 </li>
                 <li>
                     <span class="truth-number">02</span>
-                    <div><strong>Perception:</strong> The news is a distraction engine. It feeds you emotional culture wars so you ignore the massive wealth transfers happening in the background.</div>
+                    <div><strong>Perception:</strong> The news is not there to inform you. It is designed to keep the working class fighting each other so you ignore the wealth being extracted at the top.</div>
                 </li>
                 <li>
                     <span class="truth-number">03</span>
-                    <div><strong>Systems:</strong> The school system trained you to be a robot. Now, AI is replacing the robots. If you aren't the one prompting the machine, you will be automated.</div>
+                    <div><strong>Systems:</strong> Schools trained you to be a robot. AI is now replacing the robots. Learn to prompt the systems, or you will be automated out of existence.</div>
                 </li>
                 <li>
                     <span class="truth-number">04</span>
-                    <div><strong>Biology:</strong> The food industry makes cheap, addictive food that breaks your metabolism. The medical industry profits by selling you daily pills to manage the damage instead of curing you.</div>
+                    <div><strong>Biology:</strong> The food industry profits by pumping you with cheap, addictive chemicals. The medical industry profits by selling you daily pills to manage the damage. A cured patient is a lost customer.</div>
                 </li>
                 <li>
                     <span class="truth-number">05</span>
-                    <div><strong>Power:</strong> Politicians are temporary PR managers. The permanent power lies with intelligence agencies, the military, and central banks, whose plans rarely change regardless of who wins an election.</div>
+                    <div><strong>Power:</strong> Elections just swap the PR managers. True power belongs to intelligence agencies, the military, and central banks. Their agendas never change.</div>
                 </li>
             </ul>
         </div>
 
-        <!-- Navigation Tabs -->
         <div class="tabs-wrapper">
             <button class="tab-trigger active" id="default-tab" onclick="switchCanvasView('finance-pane', 'MONEY & FINANCE', 'Rank 1', '#d97706', this)">FINANCE</button>
             <button class="tab-trigger" onclick="switchCanvasView('perception-pane', 'INFORMATION & MEDIA', 'Rank 2', '#2997ff', this)">PERCEPTION</button>
@@ -528,7 +526,6 @@
             <button class="tab-trigger" onclick="switchCanvasView('power-pane', 'POWER & SHADOW OPS', 'Rank 5', '#e63946', this)">POWER</button>
         </div>
 
-        <!-- Dynamic Track Header -->
         <div class="track-header">
             <div class="track-title" id="display-title">MONEY & FINANCE</div>
             <div class="track-rank" id="display-rank">Rank 1</div>
@@ -546,15 +543,15 @@
                 </div>
                 <div class="advice-section">
                     <div class="advice-block">
-                        <div class="advice-label">The Brutal Reality</div>
-                        <div class="advice-text">Look at the 2008 financial crash. Wall Street mathematically destroyed the global housing market. They didn't go to jail. They took $700 billion in taxpayer bailouts and paid themselves record bonuses the next year. It's not a conspiracy; it's just a system that legally privatizes gains and socializes losses.</div>
+                        <div class="advice-label">The Reality</div>
+                        <div class="advice-text">Wall Street destroyed the housing market in 2008, took a $700 billion taxpayer bailout, and paid themselves record bonuses. No jail time. The system legally privatizes gains and socializes losses.</div>
                     </div>
                     <div class="advice-block">
-                        <div class="advice-label">The Escape</div>
-                        <div class="advice-text">The money in your bank account is a melting ice cube. Because the government constantly prints money to cover its debts, your cash loses value every day. Stop trading your time for paper money. Hold physical assets, build a business, and understand how capital actually flows globally.</div>
+                        <div class="advice-label">The Advice</div>
+                        <div class="advice-text">Stop trading your time for paper money. Build a zero-inventory business, trade hard commodities globally, and capture the arbitrage. Be the tollbooth, not the traffic.</div>
                     </div>
                     <div class="instruction-box">
-                        <strong>Instruction:</strong> The total video is 30 mins. Focus specifically on the "Long Term Debt Cycle" starting at 15:00 to understand how currencies reset.
+                        <strong>Instruction:</strong> The total video is 30 mins. Focus specifically on the "Long Term Debt Cycle" starting at 15:00.
                     </div>
                 </div>
                 <a href="https://www.youtube.com/watch?v=npoNbXXS4oQ" target="_blank" class="asset-link-box">
@@ -570,51 +567,55 @@
                 </div>
                 <div class="advice-section">
                     <div class="advice-block">
-                        <div class="advice-label">Operational Proof</div>
-                        <div class="advice-text">This series shows exactly how banks create money out of thin air through fractional reserve banking. It documents the undeniable difference between real money (hard assets) and fake currency (paper fiat), proving why unbacked currencies always eventually fail.</div>
+                        <div class="advice-label">The Reality</div>
+                        <div class="advice-text">Every fiat currency in history has gone to zero. Politicians always run out of money and turn on the printers, deliberately destroying your purchasing power to save themselves.</div>
+                    </div>
+                    <div class="advice-block">
+                        <div class="advice-label">The Advice</div>
+                        <div class="advice-text">Hold hard assets they cannot print.</div>
                     </div>
                     <div class="instruction-box">
-                        <strong>Instruction:</strong> The full series is over 2.5 hours, but you must pay maximum attention to Episode 4. It is the most rigorous mathematical breakdown of currency creation.
+                        <strong>Instruction:</strong> Prioritize <strong>Episode 4</strong>. It provides the exact mathematical breakdown of how central banks create currency out of thin air.
                     </div>
                 </div>
                 <a href="https://www.youtube.com/watch?v=iFDe5kUUyT0" target="_blank" class="asset-link-box">
-                    <span class="asset-title">Watch: Mike Maloney (Link to Ep. 4)</span>
+                    <span class="asset-title">Watch: Mike Maloney (Ep. 4 Link)</span>
                     <span class="asset-icon">→</span>
                 </a>
             </div>
 
             <div class="resource-card">
                 <div class="card-header">
-                    <div class="card-title">Inside Job</div>
-                    <div class="time-badge">2.0 H</div>
+                    <div class="card-title">FRONTLINE: The Warning</div>
+                    <div class="time-badge">1.0 H</div>
                 </div>
                 <div class="advice-section">
                     <div class="advice-block">
-                        <div class="advice-label">Operational Proof</div>
-                        <div class="advice-text">This explicitly details how academic institutions, rating agencies, and mega-banks actively conspired to artificially inflate credit ratings on toxic assets. They knowingly packaged garbage debt to steal billions from the global middle class with zero legal consequences.</div>
+                        <div class="advice-label">The Reality</div>
+                        <div class="advice-text">Government regulators held the exact data proving the 2008 collapse was coming. Wall Street lobbyists and spineless politicians completely silenced them to protect their own profits.</div>
                     </div>
                     <div class="instruction-box">
-                        <strong>Instruction:</strong> Watch the full 2-hour documentary to understand how financial lobbying perfectly neutralizes government regulation.
+                        <strong>Instruction:</strong> Watch the full 1-hour documentary. It proves the government works for the banks, not for you.
                     </div>
                 </div>
-                <a href="https://www.youtube.com/watch?v=T2IaJwkqgPk" target="_blank" class="asset-link-box">
-                    <span class="asset-title">Watch: The 2010 Documentary</span>
+                <a href="https://www.youtube.com/watch?v=ZZ25uZtey34" target="_blank" class="asset-link-box">
+                    <span class="asset-title">Watch: PBS Investigation</span>
                     <span class="asset-icon">→</span>
                 </a>
             </div>
 
             <div class="resource-card">
                 <div class="card-header">
-                    <div class="card-title">Banking Networks & Havens</div>
+                    <div class="card-title">Banking Networks & Tax Havens</div>
                     <div class="time-badge">3.0 H</div>
                 </div>
                 <div class="advice-section">
                     <div class="advice-block">
-                        <div class="advice-label">Operational Proof</div>
-                        <div class="advice-text">Central banks engineer boom-and-bust cycles to shift public resources. Simultaneously, the global elite hide trillions in offshore British tax havens to remain completely immune to the financial laws they enforce upon you.</div>
+                        <div class="advice-label">The Reality</div>
+                        <div class="advice-text">Central banks engineer economic crashes to shift wealth to the top. Meanwhile, the global elite hide trillions in offshore havens, remaining totally immune to the taxes they force you to pay.</div>
                     </div>
                     <div class="instruction-box">
-                        <strong>Instruction:</strong> This covers two full documentaries (1.5H each): "Princes of the Yen" and "The Spider's Web". Watch both to understand global capital flow.
+                        <strong>Instruction:</strong> Watch "Princes of the Yen" and "The Spider's Web." 
                     </div>
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 8px;">
@@ -629,14 +630,34 @@
                 </div>
             </div>
 
-            <!-- Track Ledger -->
+            <div class="resource-card">
+                <div class="card-header">
+                    <div class="card-title">The Panama Papers (ICIJ)</div>
+                    <div class="time-badge">1.5 H</div>
+                </div>
+                <div class="advice-section">
+                    <div class="advice-block">
+                        <div class="advice-label">The Reality</div>
+                        <div class="advice-text">Leaked ledgers prove the politicians raising your taxes use secret offshore shell companies to hide their own wealth. They do not play by their own rules.</div>
+                    </div>
+                    <div class="instruction-box">
+                        <strong>Instruction:</strong> Watch the ICIJ documentary breakdowns of the global money laundering machine.
+                    </div>
+                </div>
+                <a href="https://www.youtube.com/watch?v=5rTzhrsaXEc" target="_blank" class="asset-link-box">
+                    <span class="asset-title">Watch: ICIJ Offshore Expose</span>
+                    <span class="asset-icon">→</span>
+                </a>
+            </div>
+
             <div class="track-ledger">
                 <div class="ledger-title">Finance Track Summation</div>
                 <div class="ledger-row"><span>How The Economic Machine Works</span><span>0.5 H</span></div>
                 <div class="ledger-row"><span>Hidden Secrets of Money</span><span>2.5 H</span></div>
-                <div class="ledger-row"><span>Inside Job</span><span>2.0 H</span></div>
-                <div class="ledger-row"><span>Banking Networks & Havens</span><span>3.0 H</span></div>
-                <div class="ledger-row ledger-total"><span>Total Duration</span><span>8.0 H</span></div>
+                <div class="ledger-row"><span>FRONTLINE: The Warning</span><span>1.0 H</span></div>
+                <div class="ledger-row"><span>Princes of the Yen & Spider's Web</span><span>3.0 H</span></div>
+                <div class="ledger-row"><span>The Panama Papers</span><span>1.5 H</span></div>
+                <div class="ledger-row ledger-total"><span>Total Track Duration</span><span>8.5 H</span></div>
             </div>
         </div>
 
@@ -652,15 +673,15 @@
                 </div>
                 <div class="advice-section">
                     <div class="advice-block">
-                        <div class="advice-label">The Brutal Reality</div>
-                        <div class="advice-text">Look at the Gulf of Tonkin or WMDs in Iraq. Intelligence agencies fabricated evidence to start wars that made defense contractors trillions of dollars. The media didn't investigate; they acted as a PR firm to sell the war. It's not a secret plot; it's just the media prioritizing access and profit over truth.</div>
+                        <div class="advice-label">The Reality</div>
+                        <div class="advice-text">Intelligence agencies faked the WMD evidence in Iraq to start a war. Defense contractors made trillions. The news networks didn't investigate; they acted as a PR firm to sell the slaughter.</div>
                     </div>
                     <div class="advice-block">
-                        <div class="advice-label">The Escape</div>
-                        <div class="advice-text">Discard corporate news. It exists to make you angry at your neighbor over minor issues so you don't look up. Track raw data instead. Look at flight logs, corporate registry filings, and satellite data. Truth is found in boring data, never in screaming headlines.</div>
+                        <div class="advice-label">The Advice</div>
+                        <div class="advice-text">Turn off the news. Track raw OSINT data. Pull corporate registries, track flight logs, and follow the money. Truth lives in boring spreadsheets, not headlines.</div>
                     </div>
                     <div class="instruction-box">
-                        <strong>Instruction:</strong> The full film is 2.5 hours. To grasp the mechanics quickly, focus heavily on the section from 20:00 to 55:00 explaining the "5 Filters" of media.
+                        <strong>Instruction:</strong> Focus heavily on the section from <strong>20:00 to 55:00</strong> explaining the "5 Filters" of media.
                     </div>
                 </div>
                 <a href="https://www.youtube.com/watch?v=BQXsPU25B60" target="_blank" class="asset-link-box">
@@ -671,20 +692,40 @@
 
             <div class="resource-card">
                 <div class="card-header">
-                    <div class="card-title">The Century of the Self</div>
-                    <div class="time-badge">3.0 H</div>
+                    <div class="card-title">Gary Webb & The Dark Alliance</div>
+                    <div class="time-badge">1.5 H</div>
                 </div>
                 <div class="advice-section">
                     <div class="advice-block">
-                        <div class="advice-label">Operational Proof</div>
-                        <div class="advice-text">This documentary strictly details the verified historical transition from needs-based manufacturing to desire-based consumerism. It shows how corporations used psychology to manipulate the public into buying things they don't actually need, keeping them docile.</div>
+                        <div class="advice-label">The Reality</div>
+                        <div class="advice-text">Gary Webb proved the CIA let cartels flood the US with cocaine to fund a secret war. The major news networks destroyed his life for exposing it. Decades later, the CIA admitted he was right all along.</div>
                     </div>
                     <div class="instruction-box">
-                        <strong>Instruction:</strong> The entire series is highly valuable (3.0H total), but if you only have time for the core thesis, watch Part 1: "Happiness Machines."
+                        <strong>Instruction:</strong> Watch the documentary breakdown of how the media assassinated Gary Webb's character.
+                    </div>
+                </div>
+                <a href="https://www.youtube.com/watch?v=1JMkL1eUibM" target="_blank" class="asset-link-box">
+                    <span class="asset-title">Watch: The CIA & Crack Epidemic</span>
+                    <span class="asset-icon">→</span>
+                </a>
+            </div>
+
+            <div class="resource-card">
+                <div class="card-header">
+                    <div class="card-title">The Century of the Self</div>
+                    <div class="time-badge">4.0 H</div>
+                </div>
+                <div class="advice-section">
+                    <div class="advice-block">
+                        <div class="advice-label">The Reality</div>
+                        <div class="advice-text">Corporations weaponized human psychology to turn dangerous, active citizens into passive, predictable consumers who blindly buy garbage.</div>
+                    </div>
+                    <div class="instruction-box">
+                        <strong>Instruction:</strong> If you want the core thesis immediately, watch <strong>Part 1: "Happiness Machines."</strong>
                     </div>
                 </div>
                 <a href="https://www.youtube.com/watch?v=eJ3RzGoQC4s" target="_blank" class="asset-link-box">
-                    <span class="asset-title">Watch: Adam Curtis Documentary</span>
+                    <span class="asset-title">Watch: Adam Curtis (Part 1)</span>
                     <span class="asset-icon">→</span>
                 </a>
             </div>
@@ -696,8 +737,8 @@
                 </div>
                 <div class="advice-section">
                     <div class="advice-block">
-                        <div class="advice-label">Operational Proof</div>
-                        <div class="advice-text">Shows exactly how decentralized citizens use raw data to expose state secrets. By tracking public digital footprints, they geolocate military units and expose assassination squads entirely outside of the traditional media filter.</div>
+                        <div class="advice-label">The Reality</div>
+                        <div class="advice-text">Decentralized citizens use raw internet data to geolocate military units and expose assassination squads. You don't need state media to find the truth.</div>
                     </div>
                     <div class="instruction-box">
                         <strong>Instruction:</strong> Watch the full documentary to understand modern Open Source Intelligence workflows.
@@ -709,13 +750,13 @@
                 </a>
             </div>
 
-            <!-- Track Ledger -->
             <div class="track-ledger">
                 <div class="ledger-title">Perception Track Summation</div>
                 <div class="ledger-row"><span>Manufacturing Consent</span><span>2.5 H</span></div>
-                <div class="ledger-row"><span>The Century of the Self</span><span>3.0 H</span></div>
+                <div class="ledger-row"><span>Gary Webb & The Dark Alliance</span><span>1.5 H</span></div>
+                <div class="ledger-row"><span>The Century of the Self</span><span>4.0 H</span></div>
                 <div class="ledger-row"><span>Bellingcat: OSINT Mechanics</span><span>1.5 H</span></div>
-                <div class="ledger-row ledger-total"><span>Total Duration</span><span>7.0 H</span></div>
+                <div class="ledger-row ledger-total"><span>Total Track Duration</span><span>9.5 H</span></div>
             </div>
         </div>
 
@@ -726,44 +767,24 @@
             
             <div class="resource-card">
                 <div class="card-header">
-                    <div class="card-title">The Creepy Line</div>
+                    <div class="card-title">The Internet's Own Boy (Aaron Swartz)</div>
                     <div class="time-badge">1.5 H</div>
                 </div>
                 <div class="advice-section">
                     <div class="advice-block">
-                        <div class="advice-label">The Brutal Reality</div>
-                        <div class="advice-text">Look at Cambridge Analytica. They harvested the data of 87 million users, fed it into algorithms, and manipulated global elections. The screens you look at are literally designed to hijack your brain's dopamine so tech companies can farm your attention for ad revenue.</div>
+                        <div class="advice-label">The Reality</div>
+                        <div class="advice-text">Aaron Swartz downloaded academic papers to make human knowledge free. The government threatened him with 35 years in prison, driving him to suicide. They will crush anyone threatening their monopolies.</div>
                     </div>
                     <div class="advice-block">
-                        <div class="advice-label">The Escape</div>
-                        <div class="advice-text">If you aren't programming the machine, you are the product. You must master AI and systems thinking. Automate your own workflows, but keep your data private. Build real technical skills, or you will simply become a data point for a Silicon Valley monopoly.</div>
+                        <div class="advice-label">The Advice</div>
+                        <div class="advice-text">If you don't code the machine, you are the product. Master local LLMs and system architectures. Automate your workflows, but keep your data encrypted. Do not become free training data for Silicon Valley.</div>
                     </div>
                     <div class="instruction-box">
-                        <strong>Instruction:</strong> Watch the full documentary to understand how search engine algorithms quietly dictate public perception.
+                        <strong>Instruction:</strong> Watch the full documentary to understand who truly owns your data.
                     </div>
                 </div>
-                <a href="https://www.youtube.com/watch?v=fa5GzP3X2x4" target="_blank" class="asset-link-box">
-                    <span class="asset-title">Watch: Search Manipulation Dynamics</span>
-                    <span class="asset-icon">→</span>
-                </a>
-            </div>
-
-            <div class="resource-card">
-                <div class="card-header">
-                    <div class="card-title">The Social Dilemma</div>
-                    <div class="time-badge">1.5 H</div>
-                </div>
-                <div class="advice-section">
-                    <div class="advice-block">
-                        <div class="advice-label">Operational Proof</div>
-                        <div class="advice-text">The actual engineers who built social media networks admit on camera that they designed the platforms like casino slot machines specifically to addict you and modify your behavior.</div>
-                    </div>
-                    <div class="instruction-box">
-                        <strong>Instruction:</strong> Watch the full documentary. It explains the exact mechanics of the attention economy.
-                    </div>
-                </div>
-                <a href="https://www.youtube.com/watch?v=uaZysBGEzQ4" target="_blank" class="asset-link-box">
-                    <span class="asset-title">Watch: Network Architecture Exposed</span>
+                <a href="https://www.youtube.com/watch?v=9vz06QO3UkQ" target="_blank" class="asset-link-box">
+                    <span class="asset-title">Watch: The Aaron Swartz Story</span>
                     <span class="asset-icon">→</span>
                 </a>
             </div>
@@ -775,11 +796,11 @@
                 </div>
                 <div class="advice-section">
                     <div class="advice-block">
-                        <div class="advice-label">Operational Proof</div>
-                        <div class="advice-text">How to stop looking at isolated surface-level events and start seeing the invisible mechanical feedback loops, delays, and structural boundaries that actually run the world.</div>
+                        <div class="advice-label">The Reality</div>
+                        <div class="advice-text">If you don't understand systems, you are a pawn. Look past surface events and find the hidden feedback loops and delays that actually dictate real-world outcomes.</div>
                     </div>
                     <div class="instruction-box">
-                        <strong>Instruction:</strong> This lecture breaks down Donella Meadows' core concepts. Highly recommended before building any business systems or CRM workflows.
+                        <strong>Instruction:</strong> Watch before deploying any CRM architectures or automated business systems.
                     </div>
                 </div>
                 <a href="https://www.youtube.com/watch?v=gutQCeD3M9o" target="_blank" class="asset-link-box">
@@ -788,13 +809,53 @@
                 </a>
             </div>
 
-            <!-- Track Ledger -->
+            <div class="resource-card">
+                <div class="card-header">
+                    <div class="card-title">United States of Secrets (FRONTLINE)</div>
+                    <div class="time-badge">2.0 H</div>
+                </div>
+                <div class="advice-section">
+                    <div class="advice-block">
+                        <div class="advice-label">The Reality</div>
+                        <div class="advice-text">Silicon Valley tech giants legally integrate their massive data architectures directly with state intelligence. They build the net; the government scoops the fish.</div>
+                    </div>
+                    <div class="instruction-box">
+                        <strong>Instruction:</strong> Watch Part 2 to understand the corporate-intelligence data pipeline.
+                    </div>
+                </div>
+                <a href="https://www.youtube.com/watch?v=iirMXVtnby4" target="_blank" class="asset-link-box">
+                    <span class="asset-title">Watch: PBS Investigation</span>
+                    <span class="asset-icon">→</span>
+                </a>
+            </div>
+
+            <div class="resource-card">
+                <div class="card-header">
+                    <div class="card-title">The Social Dilemma</div>
+                    <div class="time-badge">1.5 H</div>
+                </div>
+                <div class="advice-section">
+                    <div class="advice-block">
+                        <div class="advice-label">The Reality</div>
+                        <div class="advice-text">Engineers intentionally designed social media like casino slot machines to hijack your dopamine. Your attention is harvested and sold.</div>
+                    </div>
+                    <div class="instruction-box">
+                        <strong>Instruction:</strong> Watch the full documentary.
+                    </div>
+                </div>
+                <a href="https://www.youtube.com/watch?v=uaZysBGEzQ4" target="_blank" class="asset-link-box">
+                    <span class="asset-title">Watch: Network Architecture Exposed</span>
+                    <span class="asset-icon">→</span>
+                </a>
+            </div>
+
             <div class="track-ledger">
                 <div class="ledger-title">Systems Track Summation</div>
-                <div class="ledger-row"><span>The Creepy Line</span><span>1.5 H</span></div>
-                <div class="ledger-row"><span>The Social Dilemma</span><span>1.5 H</span></div>
+                <div class="ledger-row"><span>The Internet's Own Boy</span><span>1.5 H</span></div>
                 <div class="ledger-row"><span>Thinking in Systems</span><span>1.0 H</span></div>
-                <div class="ledger-row ledger-total"><span>Total Duration</span><span>4.0 H</span></div>
+                <div class="ledger-row"><span>United States of Secrets</span><span>2.0 H</span></div>
+                <div class="ledger-row"><span>The Social Dilemma</span><span>1.5 H</span></div>
+                <div class="ledger-row ledger-total"><span>Total Track Duration</span><span>6.0 H</span></div>
             </div>
         </div>
 
@@ -805,24 +866,24 @@
             
             <div class="resource-card">
                 <div class="card-header">
-                    <div class="card-title">The Crime of the Century</div>
+                    <div class="card-title">FRONTLINE: Opioids, Inc</div>
                     <div class="time-badge">4.0 H</div>
                 </div>
                 <div class="advice-section">
                     <div class="advice-block">
-                        <div class="advice-label">The Brutal Reality</div>
-                        <div class="advice-text">Look at Purdue Pharma and the opioid crisis. Executives knew OxyContin was deadly and addictive. They faked the studies and bribed doctors to prescribe it anyway, killing hundreds of thousands of people just to hit their profit targets. It wasn't a secret cabal; it was just a corporation maximizing shareholder value.</div>
+                        <div class="advice-label">The Reality</div>
+                        <div class="advice-text">Purdue Pharma knew OxyContin was deadly. They faked studies and bribed doctors to prescribe it, triggering an epidemic that killed hundreds of thousands, just to hit profit targets.</div>
                     </div>
                     <div class="advice-block">
-                        <div class="advice-label">The Escape</div>
-                        <div class="advice-text">The food industry makes money by engineering cheap, addictive food that ruins your health. The medical industry makes money by selling you daily pills to manage that ruined health. A cured patient is a lost customer. Opt out. Eat single-ingredient foods, lift weights, and build a body that doesn't need their pills.</div>
+                        <div class="advice-label">The Advice</div>
+                        <div class="advice-text">The medical system profits from sick people. A cured patient is a lost customer. Opt out entirely. Strip seed oils and sugar from your diet. Lift weights. They cannot farm a strong, healthy host for profit.</div>
                     </div>
                     <div class="instruction-box">
-                        <strong>Instruction:</strong> Watch the full 2-part documentary (4.0H). It uses federal court documents to prove the structural corruption.
+                        <strong>Instruction:</strong> Watch the 1.0H Frontline doc or the full 4.0H HBO "Crime of the Century". Both use federal court documents to prove the bribes.
                     </div>
                 </div>
-                <a href="https://www.hbo.com/movies/the-crime-of-the-century" target="_blank" class="asset-link-box">
-                    <span class="asset-title">Watch: HBO Pharma Operations</span>
+                <a href="https://www.youtube.com/watch?v=WvCld2vKug8" target="_blank" class="asset-link-box">
+                    <span class="asset-title">Watch: PBS Investigation</span>
                     <span class="asset-icon">→</span>
                 </a>
             </div>
@@ -834,11 +895,11 @@
                 </div>
                 <div class="advice-section">
                     <div class="advice-block">
-                        <div class="advice-label">Operational Proof</div>
-                        <div class="advice-text">A biochemist breaks down how the food industry knowingly introduced high-fructose corn syrup to bypass the brain's fullness signals, creating physical addiction and ruining the metabolic health of millions.</div>
+                        <div class="advice-label">The Reality</div>
+                        <div class="advice-text">The food industry knowingly pumped high-fructose corn syrup into the global diet to bypass your brain's fullness signals, creating mass addiction and metabolic disease.</div>
                     </div>
                     <div class="instruction-box">
-                        <strong>Instruction:</strong> The lecture is 1.5H total. Make absolutely sure you watch from 35:00 onwards to see the hepatic (liver) processing of fructose.
+                        <strong>Instruction:</strong> Watch from <strong>35:00 onwards</strong> to see the exact hepatic (liver) processing of fructose.
                     </div>
                 </div>
                 <a href="https://www.youtube.com/watch?v=dBnniua6-oM" target="_blank" class="asset-link-box">
@@ -854,8 +915,8 @@
                 </div>
                 <div class="advice-section">
                     <div class="advice-block">
-                        <div class="advice-label">Operational Proof</div>
-                        <div class="advice-text">Journalistic investigation showing exactly how corporate food processors optimize their supply chains exclusively for extreme shelf life and cost reduction, completely disregarding human health.</div>
+                        <div class="advice-label">The Reality</div>
+                        <div class="advice-text">Corporate food processors optimize exclusively for extreme shelf life and profit margins. They completely disregard human safety and biological decay.</div>
                     </div>
                     <div class="instruction-box">
                         <strong>Instruction:</strong> Watch the full 45-minute documentary.
@@ -867,13 +928,12 @@
                 </a>
             </div>
 
-            <!-- Track Ledger -->
             <div class="track-ledger">
                 <div class="ledger-title">Biology Track Summation</div>
-                <div class="ledger-row"><span>The Crime of the Century</span><span>4.0 H</span></div>
+                <div class="ledger-row"><span>Pharma Operations (HBO/PBS)</span><span>4.0 H</span></div>
                 <div class="ledger-row"><span>Sugar: The Bitter Truth</span><span>1.5 H</span></div>
                 <div class="ledger-row"><span>Dark Side of the Food Industry</span><span>0.75 H</span></div>
-                <div class="ledger-row ledger-total"><span>Total Duration</span><span>6.25 H</span></div>
+                <div class="ledger-row ledger-total"><span>Total Track Duration</span><span>6.25 H</span></div>
             </div>
         </div>
 
@@ -884,44 +944,24 @@
             
             <div class="resource-card">
                 <div class="card-header">
-                    <div class="card-title">Wormwood & MKUltra</div>
-                    <div class="time-badge">4.0 H</div>
+                    <div class="card-title">WikiLeaks & Vault 7 (Assange)</div>
+                    <div class="time-badge">2.0 H</div>
                 </div>
                 <div class="advice-section">
                     <div class="advice-block">
-                        <div class="advice-label">The Brutal Reality</div>
-                        <div class="advice-text">For decades, people who said the CIA was kidnapping citizens and giving them LSD for mind control were called crazy conspiracy theorists. Then the documents were declassified. Operation MKUltra was 100% real. The Epstein network was completely real. The "conspiracy" label is often just a tool to hide normal, illegal government operations.</div>
+                        <div class="advice-label">The Reality</div>
+                        <div class="advice-text">Julian Assange published raw, hacked files proving the CIA hacks smart TVs to spy on you and commits war crimes. They locked him in solitary confinement simply for showing you their source code.</div>
                     </div>
                     <div class="advice-block">
-                        <div class="advice-label">The Escape</div>
-                        <div class="advice-text">Politicians are temporary. Real power is permanent and operates strictly on leverage and resource control. Don't waste energy waving political flags. Secure your own life, encrypt your communications, and only trust hard, verifiable data.</div>
+                        <div class="advice-label">The Advice</div>
+                        <div class="advice-text">Stop waving political flags. Encrypt your comms, learn technical leverage, and trust only raw, leaked source documents.</div>
                     </div>
                     <div class="instruction-box">
-                        <strong>Instruction:</strong> Watch the full Wormwood docu-series (4.0H). If short on time, search YouTube for "BBC Reel MK Ultra" for a verified 15-minute breakdown.
+                        <strong>Instruction:</strong> Watch "We Steal Secrets" or track down the raw "Collateral Murder" video archive.
                     </div>
                 </div>
-                <a href="https://www.netflix.com/title/80050007" target="_blank" class="asset-link-box">
-                    <span class="asset-title">Watch: Declassified Operations</span>
-                    <span class="asset-icon">→</span>
-                </a>
-            </div>
-
-            <div class="resource-card">
-                <div class="card-header">
-                    <div class="card-title">Operation Gladio</div>
-                    <div class="time-badge">2.5 H</div>
-                </div>
-                <div class="advice-section">
-                    <div class="advice-block">
-                        <div class="advice-label">Operational Proof</div>
-                        <div class="advice-text">The verified proof that NATO and Western intelligence funded false-flag terrorist bombings in Europe, killing innocent civilians, specifically to scare the public into voting for right-wing governments.</div>
-                    </div>
-                    <div class="instruction-box">
-                        <strong>Instruction:</strong> Watch the full documentary. It includes on-the-record parliamentary admissions of the operations.
-                    </div>
-                </div>
-                <a href="https://www.youtube.com/watch?v=GGHXjO8wHsA" target="_blank" class="asset-link-box">
-                    <span class="asset-title">Watch: BBC Timewatch Investigation</span>
+                <a href="https://www.youtube.com/watch?v=WqqoE1i3rA4" target="_blank" class="asset-link-box">
+                    <span class="asset-title">Watch: WikiLeaks Documentary</span>
                     <span class="asset-icon">→</span>
                 </a>
             </div>
@@ -933,15 +973,55 @@
                 </div>
                 <div class="advice-section">
                     <div class="advice-block">
-                        <div class="advice-label">Operational Proof</div>
-                        <div class="advice-text">The real-time, undeniable hidden-camera footage of Edward Snowden exposing that the NSA intercepts and catalogues every single text message, email, and digital footprint of the global population. Another "conspiracy" proven as absolute fact.</div>
+                        <div class="advice-label">The Reality</div>
+                        <div class="advice-text">Edward Snowden provided undeniable proof that the NSA bypasses the Constitution to intercept every text message, email, and digital footprint on earth.</div>
                     </div>
                     <div class="instruction-box">
-                        <strong>Instruction:</strong> Watch the full 2-hour documentary to understand the physical infrastructure of global surveillance.
+                        <strong>Instruction:</strong> Watch the full 2-hour documentary.
                     </div>
                 </div>
                 <a href="https://www.youtube.com/watch?v=XiGwAIfBqJ8" target="_blank" class="asset-link-box">
                     <span class="asset-title">Watch: The Surveillance Grid</span>
+                    <span class="asset-icon">→</span>
+                </a>
+            </div>
+
+            <div class="resource-card">
+                <div class="card-header">
+                    <div class="card-title">MK-Ultra (CIA Mind Control)</div>
+                    <div class="time-badge">0.25 H</div>
+                </div>
+                <div class="advice-section">
+                    <div class="advice-block">
+                        <div class="advice-label">The Reality</div>
+                        <div class="advice-text">For decades, CIA mind control was called a "crazy conspiracy." Then documents were declassified proving Operation MKUltra was 100% real. The "conspiracy" label is just a tool to hide illegal operations.</div>
+                    </div>
+                    <div class="instruction-box">
+                        <strong>Instruction:</strong> Watch this tight, 15-minute fully verified breakdown using declassified CIA FOIA documents.
+                    </div>
+                </div>
+                <a href="https://www.youtube.com/watch?v=y_-ek5CsTGc" target="_blank" class="asset-link-box">
+                    <span class="asset-title">Watch: BBC REEL Breakdown</span>
+                    <span class="asset-icon">→</span>
+                </a>
+            </div>
+
+            <div class="resource-card">
+                <div class="card-header">
+                    <div class="card-title">Operation Gladio</div>
+                    <div class="time-badge">0.8 H</div>
+                </div>
+                <div class="advice-section">
+                    <div class="advice-block">
+                        <div class="advice-label">The Reality</div>
+                        <div class="advice-text">NATO and Western intelligence funded false-flag terrorist bombings in Europe, murdering civilians to scare the public into voting for right-wing governments.</div>
+                    </div>
+                    <div class="instruction-box">
+                        <strong>Instruction:</strong> Watch the full 50 minutes. It includes on-the-record parliamentary admissions.
+                    </div>
+                </div>
+                <a href="https://www.youtube.com/watch?v=GGHXjO8wHsA" target="_blank" class="asset-link-box">
+                    <span class="asset-title">Watch: BBC Timewatch Investigation</span>
                     <span class="asset-icon">→</span>
                 </a>
             </div>
@@ -953,16 +1033,16 @@
                 </div>
                 <div class="advice-section">
                     <div class="advice-block">
-                        <div class="advice-label">Operational Proof</div>
-                        <div class="advice-text">Demonstrates how governments use autonomous computer viruses (Stuxnet) to blow up physical infrastructure in rival nations, and how massive, unpayable debt is weaponized to legally steal natural resources from developing countries.</div>
+                        <div class="advice-label">The Reality</div>
+                        <div class="advice-text">Governments use computer viruses (Stuxnet) to blow up physical infrastructure. They weaponize unpayable debt to legally steal resources from developing nations.</div>
                     </div>
                     <div class="instruction-box">
-                        <strong>Instruction:</strong> Watch the full "Zero Days" documentary (2.0H) and "Confessions of an Economic Hit Man" (1.5H).
+                        <strong>Instruction:</strong> Watch "Zero Days" (2.0H) and "Confessions of an Economic Hit Man" (1.5H).
                     </div>
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 8px;">
                     <a href="https://www.youtube.com/watch?v=7uEiyhE-vLE" target="_blank" class="asset-link-box" style="margin-top: 0;">
-                        <span class="asset-title">Watch: Zero Days Trailer/Info</span>
+                        <span class="asset-title">Watch: Zero Days (Stuxnet)</span>
                         <span class="asset-icon">→</span>
                     </a>
                     <a href="https://www.youtube.com/watch?v=yTbdnNgqfs8" target="_blank" class="asset-link-box" style="margin-top: 0;">
@@ -972,27 +1052,25 @@
                 </div>
             </div>
 
-            <!-- Track Ledger -->
             <div class="track-ledger">
                 <div class="ledger-title">Power Track Summation</div>
-                <div class="ledger-row"><span>Wormwood & MKUltra</span><span>4.0 H</span></div>
-                <div class="ledger-row"><span>Operation Gladio</span><span>2.5 H</span></div>
-                <div class="ledger-row"><span>Citizenfour</span><span>2.0 H</span></div>
+                <div class="ledger-row"><span>WikiLeaks & Vault 7</span><span>2.0 H</span></div>
+                <div class="ledger-row"><span>Citizenfour (Snowden)</span><span>2.0 H</span></div>
+                <div class="ledger-row"><span>MK-Ultra (CIA)</span><span>0.25 H</span></div>
+                <div class="ledger-row"><span>Operation Gladio</span><span>0.8 H</span></div>
                 <div class="ledger-row"><span>Cyber & Economic War</span><span>3.5 H</span></div>
-                <div class="ledger-row ledger-total"><span>Total Duration</span><span>12.0 H</span></div>
+                <div class="ledger-row ledger-total"><span>Total Track Duration</span><span>8.55 H</span></div>
             </div>
         </div>
 
-        <!-- Global Project Footer (Static Neutral) -->
         <div class="global-footer">
             <div class="global-footer-text">Total System Ingestion Time</div>
-            <div class="global-footer-time">37.25 H</div>
+            <div class="global-footer-time">38.8 H</div>
         </div>
 
     </div>
 
     <script>
-        // Initialization
         document.addEventListener("DOMContentLoaded", () => {
             const defaultTab = document.getElementById('default-tab');
             if (defaultTab) {
